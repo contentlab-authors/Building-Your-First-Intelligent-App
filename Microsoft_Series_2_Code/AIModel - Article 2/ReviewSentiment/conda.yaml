@@ -1,0 +1,15 @@
+channels:
+- anaconda
+- conda-forge
+dependencies:
+- python=3.8.16
+- pip:
+  - azureml-automl-dnn-nlp~=1.51.0
+  - inference-schema
+  - azureml-defaults~=1.51.0
+  - mlflow-skinny
+- numpy==1.21.6
+- pandas==1.1.5
+- psutil>=5.2.2,<6.0.0
+- pytorch==1.7.1
+name: project_environment

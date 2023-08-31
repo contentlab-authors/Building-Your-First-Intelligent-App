@@ -1,0 +1,103 @@
+﻿@model IEnumerable<UserFeedbackApp.Models.Review>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+
+<h2>Seven Day Trend</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Positive</th>
+            <th>Neutral</th>
+            <th>Negative</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (SentimentTrends item in ViewBag.trends)
+        {
+        <tr>
+                <td>@item.Id</td>
+                <td>@item.ProductName</td>
+                <td>@item.PositiveValue</td>
+                <td>@item.NeutralValue</td>
+                <td>@item.NegativeValue</td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReviewText)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PostDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sentiment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PositiveValue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NeutralValue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NegativeValue)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReviewText)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostDate)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Sentiment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PositiveValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NeutralValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NegativeValue)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

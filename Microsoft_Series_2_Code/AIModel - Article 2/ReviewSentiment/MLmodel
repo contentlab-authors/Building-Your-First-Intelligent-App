@@ -1,0 +1,23 @@
+artifact_path: outputs/mlflow-model
+flavors:
+  python_function:
+    data: data/_model_impl_x8vozbos.pkl
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: azureml.automl.dnn.nlp
+    python_version: 3.8.16
+metadata:
+  azureml.base_image: mcr.microsoft.com/mcr.microsoft.com/azureml/curated/azureml-automl-dnn-text-gpu:72
+  azureml.engine: automl
+mlflow_version: 2.4.0
+model_uuid: 862d4efc6bfa4d45b3bf6897bf807098
+run_id: AutoML_325d684e-0846-4f00-8548-fea01d3074fd_HD_0
+saved_input_example_info:
+  artifact_path: input_example.json
+  pandas_orient: split
+  type: dataframe
+signature:
+  inputs: '[{"type": "string", "name": "Column2"}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "str", "shape": [-1]}}]'
+utc_time_created: '2023-07-09 08:42:32.849537'

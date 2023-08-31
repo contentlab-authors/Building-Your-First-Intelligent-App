@@ -1,0 +1,4 @@
+azureml-automl-dnn-nlp~=1.51.0
+inference-schema
+azureml-defaults~=1.51.0
+mlflow-skinny

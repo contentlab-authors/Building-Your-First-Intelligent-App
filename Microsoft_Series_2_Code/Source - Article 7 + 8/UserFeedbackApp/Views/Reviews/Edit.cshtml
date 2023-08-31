@@ -1,0 +1,69 @@
+﻿@model UserFeedbackApp.Models.Review
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Review</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="ProductId" class="control-label"></label>
+                <input asp-for="ProductId" class="form-control" />
+                <span asp-validation-for="ProductId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductName" class="control-label"></label>
+                <input asp-for="ProductName" class="form-control" />
+                <span asp-validation-for="ProductName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReviewText" class="control-label"></label>
+                <input asp-for="ReviewText" class="form-control" />
+                <span asp-validation-for="ReviewText" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PostDate" class="control-label"></label>
+                <input asp-for="PostDate" class="form-control" />
+                <span asp-validation-for="PostDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sentiment" class="control-label"></label>
+                <input asp-for="Sentiment" class="form-control" />
+                <span asp-validation-for="Sentiment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PositiveValue" class="control-label"></label>
+                <input asp-for="PositiveValue" class="form-control" />
+                <span asp-validation-for="PositiveValue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NeutralValue" class="control-label"></label>
+                <input asp-for="NeutralValue" class="form-control" />
+                <span asp-validation-for="NeutralValue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NegativeValue" class="control-label"></label>
+                <input asp-for="NegativeValue" class="form-control" />
+                <span asp-validation-for="NegativeValue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
